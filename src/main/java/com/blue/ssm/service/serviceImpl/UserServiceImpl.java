@@ -1,8 +1,8 @@
-package com.lzx.ssm.service.serviceImpl;
+package com.blue.ssm.service.serviceImpl;
 
-import com.lzx.ssm.dao.UserDao;
-import com.lzx.ssm.model.User;
-import com.lzx.ssm.service.UserService;
+import com.blue.ssm.dao.UserDao;
+import com.blue.ssm.model.User;
+import com.blue.ssm.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

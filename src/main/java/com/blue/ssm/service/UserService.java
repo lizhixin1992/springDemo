@@ -1,6 +1,6 @@
-package com.lzx.ssm.service;
+package com.blue.ssm.service;
 
-import com.lzx.ssm.model.User;
+import com.blue.ssm.model.User;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.lzx.ssm.model;
+package com.blue.ssm.model;
 
 import java.util.Date;
 

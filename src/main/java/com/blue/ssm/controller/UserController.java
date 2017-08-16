@@ -1,7 +1,7 @@
-package com.lzx.ssm.controller;
+package com.blue.ssm.controller;
 
-import com.lzx.ssm.model.User;
-import com.lzx.ssm.service.UserService;
+import com.blue.ssm.service.UserService;
+import com.blue.ssm.model.User;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

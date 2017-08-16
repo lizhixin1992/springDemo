@@ -1,6 +1,6 @@
-package com.lzx.ssm.dao;
+package com.blue.ssm.dao;
 
-import com.lzx.ssm.model.User;
+import com.blue.ssm.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
