@@ -12,13 +12,13 @@ public class ProducerTest {
 
     public ProducerTest() throws Exception{
 
-        QueueConsumer consumer = new QueueConsumer("lzxQueue");
-        Thread consumerThread = new Thread(consumer);
-        consumerThread.start();
+//        QueueConsumer consumer = new QueueConsumer("lzxQueue");
+//        Thread consumerThread = new Thread(consumer);
+//        consumerThread.start();
 
         QueueProducer producer = new QueueProducer("lzxQueue");
 
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 10; i++) {
             HashMap message = new HashMap();
             message.put("message number", i);
             producer.sendMessage(message);
