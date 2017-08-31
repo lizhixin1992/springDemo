@@ -43,6 +43,7 @@
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
           <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:4.2.0" />
+          <element id="library" level="project" name="Maven: javax.mail:javax.mail-api:1.6.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
