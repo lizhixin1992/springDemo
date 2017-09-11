@@ -3,15 +3,34 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context-4.0.xsd
                         http://www.springframework.org/schema/mvc
-                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                        http://www.springframework.org/schema/aop
+                        http://www.springframework.org/schema/aop/spring-aop.xsd ">
 
     <!-- 自动扫描  @Controller-->
-    <context:component-scan base-package="com.blue.ssm.controller"/>
+    <!--<context:component-scan base-package="com.blue.ssm.controller"/>-->
+
+    <context:component-scan base-package="com.blue.ssm" />
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <bean id="systemLogAspect" class="com.blue.ssm.log.SystemLogAspect"></bean>
+
+    <aop:config>
+        <!--调用日志类-->
+        <aop:aspect id="logSYS" ref="systemLogAspect">
+            <!--配置在controller包下所有的类在调用之前都会被拦截-->
+            <aop:pointcut id="logSYS" expression="execution(* com.blue.ssm.controller.*.*(..))"/>
+            <!-- 方法前触发 --><aop:before pointcut-ref="logSYS" method="before"/>
+            <!--&lt;!&ndash; 方法后触发 &ndash;&gt;<aop:after pointcut-ref="logSYS" method="after"/>-->
+            <!-- 环绕触发  <aop:around pointcut-ref="log" method="around"/>  -->
+        </aop:aspect>
+    </aop:config>
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"
